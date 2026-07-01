@@ -14,7 +14,7 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - type: script
     scripts:
-      - brave-origin.sh
+      - /files/scripts/brave-origin.sh
 
   - type: files
     files:
