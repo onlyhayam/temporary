@@ -12,10 +12,9 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: run-script
+  - type: script
     scripts:
-      - run: |
-          chmod +x ./files/scripts/brave-origin.sh
+      - brave-origin.sh
 
   - type: files
     files:
