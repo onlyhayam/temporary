@@ -37,8 +37,8 @@ modules:
         - nvtop
 
   - type: script
-    snippets:
-  	- "rm /etc/yum.repos.d/*"
+    scripts:
+  	- repo.sh
     
   - type: default-flatpaks
     configurations:
