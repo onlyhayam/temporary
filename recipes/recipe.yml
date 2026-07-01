@@ -21,10 +21,18 @@ modules:
     repos:
       copr:
         - atim/starship
+      rpm:
+        - id: brave-browser
+        name: Brave Browser
+        enabled: 1
+        gpgcheck: 1
+        gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+        baseurl: https://brave-browser-rpm-release.s3.brave.com/$basearch
     install:
       packages:
         - micro
         - starship
+        - brave-origin
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
