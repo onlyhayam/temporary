@@ -30,12 +30,16 @@ modules:
     remove:
       packages:
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
         - gnome-software
         - gnome-tour
         - htop
         - nvtop
 
+  - type: script
+    snippets:
+  	- "rm /etc/yum.repos.d/*"
+    
   - type: default-flatpaks
     configurations:
       - notify: true
