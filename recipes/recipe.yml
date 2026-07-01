@@ -21,24 +21,20 @@ modules:
     repos:
       copr:
         - atim/starship
-      rpm:
-        brave-browser-repo:
-          name: Brave Browser
-          enabled: true
-          gpgcheck: true
-          gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-          baseurl: https://brave-browser-rpm-release.s3.brave.com/$basearch
     install:
       packages:
         - micro
         - starship
-        - brave-browser
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - gnome-software
+        - gnome-tour
+        - htop
+        - nvtop
 
   - type: default-flatpaks
     configurations:
@@ -46,6 +42,5 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.gnome.Loupe
           - io.github.kolunmi.Bazaar
       - scope: user # Also add Flathub user repo, but no user packages
