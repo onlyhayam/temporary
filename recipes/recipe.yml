@@ -14,8 +14,7 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
    - type: run-script
     scripts:
-      - run: |
-          chmod +x ./files/scripts/brave-origin.sh
+      - run: ./files/scripts/brave-origin.sh
   - type: files
     files:
       - source: system
