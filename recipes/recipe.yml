@@ -22,8 +22,7 @@ modules:
       copr:
         - atim/starship
       rpm:
-        brave-browser:
-          id: brave-browser
+        brave-browser-repo:
           name: Brave Browser
           enabled: true
           gpgcheck: true
@@ -33,7 +32,7 @@ modules:
       packages:
         - micro
         - starship
-        - brave-origin
+        - brave-browser
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -50,5 +49,3 @@ modules:
           - org.gnome.Loupe
           - io.github.kolunmi.Bazaar
       - scope: user # Also add Flathub user repo, but no user packages
-
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
