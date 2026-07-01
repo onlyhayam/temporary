@@ -12,10 +12,11 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: script
-    source: /files/scripts/
+  - type: run-script
     scripts:
-      - brave-origin.sh
+      - run: |
+          chmod +x ./files/scripts/brave-origin.sh
+
   - type: files
     files:
       - source: system
@@ -31,8 +32,6 @@ modules:
         - starship
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - gnome-software
@@ -42,11 +41,8 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
+      - notify: true
         scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
+        install:
           - io.github.kolunmi.Bazaar
-      - scope: user # Also add Flathub user repo, but no user packages
-      
-    
+      - scope: user
