@@ -12,12 +12,10 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
- - type: run-script
+   - type: run-script
     scripts:
       - run: |
-          sudo dnf install dnf-plugins-core
-	  sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-	  sudo dnf install brave-origin
+          chmod +x ./files/scripts/brave-origin.sh
   - type: files
     files:
       - source: system
