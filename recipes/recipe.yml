@@ -38,4 +38,12 @@ modules:
 
   - type: script
     scripts:
-      - bz.sh
+      - repo.sh
+    
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - io.github.kolunmi.Bazaar
+      - scope: user
